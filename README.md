@@ -19,6 +19,20 @@ testing a project
 $ npm install @form8ion/cypress-scaffolder --save-prod
 ```
 
+### Options
+
+#### `projectRoot` __string__ (_required_)
+
+path to the root of the project
+
+#### `testDirectory` __string__ (_required_)
+
+path to the directory containing the Cypress tests
+
+#### `testBaseUrl` __string__ (_required_)
+
+URL where the application or site will be served when the Cypress tests run
+
 ## Contributing
 
 <!-- contribution badges -->

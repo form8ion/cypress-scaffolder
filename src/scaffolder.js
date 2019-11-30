@@ -1,4 +1,11 @@
-export async function scaffold() {
+import {promises} from 'fs';
+
+export async function scaffold({projectRoot, testDirectory, testBaseUrl}) {
+  await promises.writeFile(
+    `${projectRoot}/cypress.json`,
+    JSON.stringify({integrationFolder: testDirectory, baseUrl: testBaseUrl})
+  );
+
   return {
     dependencies: [],
     devDependencies: ['cypress'],
