@@ -14,6 +14,6 @@ export async function scaffold({projectRoot, testDirectory, testBaseUrl}) {
       'cypress:open': 'cypress open'
     },
     vcsIgnore: {files: [], directories: ['/cypress/fixtures/', '/cypress/videos/', '/cypress/screenshots']},
-    eslintConfigs: ['cypress']
+    eslintConfigs: [{name: 'cypress', files: `${testDirectory}**/*-spec.js`}]
   };
 }

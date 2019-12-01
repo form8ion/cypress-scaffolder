@@ -41,7 +41,7 @@ suite('scaffolder', () => {
           files: [],
           directories: ['/cypress/fixtures/', '/cypress/videos/', '/cypress/screenshots']
         },
-        eslintConfigs: ['cypress']
+        eslintConfigs: [{name: 'cypress', files: `${testDirectory}**/*-spec.js`}]
       }
     );
   });
