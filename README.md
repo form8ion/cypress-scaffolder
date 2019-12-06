@@ -40,6 +40,7 @@ URL where the application or site will be served when the Cypress tests run
 [![Commitizen friendly][commitizen-badge]][commitizen-link]
 [![semantic-release][semantic-release-badge]][semantic-release-link]
 [![PRs Welcome][PRs-badge]][PRs-link]
+[![Greenkeeper badge][greenkeeper-badge]][greenkeeper-link]
 
 ### Dependencies
 
@@ -70,3 +71,5 @@ $ npm test
 [semantic-release-badge]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [PRs-link]: http://makeapullrequest.com
 [PRs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
+[greenkeeper-badge]: https://badges.greenkeeper.io/form8ion/cypress-scaffolder.svg
+[greenkeeper-link]: https://greenkeeper.io/
