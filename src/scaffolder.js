@@ -1,9 +1,19 @@
+import {resolve} from 'path';
 import {promises} from 'fs';
+import mkdir from '../thirdparty-wrappers/make-dir';
 
 export async function scaffold({projectRoot, testDirectory, testBaseUrl}) {
-  await promises.writeFile(
-    `${projectRoot}/cypress.json`,
-    JSON.stringify({integrationFolder: testDirectory, baseUrl: testBaseUrl})
+  const [createdTestDirectory] = await Promise.all([
+    mkdir(testDirectory),
+    promises.writeFile(
+      `${projectRoot}/cypress.json`,
+      JSON.stringify({integrationFolder: testDirectory, baseUrl: testBaseUrl})
+    )
+  ]);
+
+  await promises.copyFile(
+    resolve(__dirname, '..', 'templates', 'canary-spec.js'),
+    `${createdTestDirectory}/canary-spec.js`
   );
 
   return {
