@@ -45,7 +45,7 @@
     "ban-sensitive-files": "1.9.7",
     "chai": "4.2.0",
     "codecov": "3.6.5",
-    "cz-conventional-changelog": "3.0.2",
+    "cz-conventional-changelog": "3.1.0",
     "husky": "4.2.5",
     "lockfile-lint": "4.2.2",
     "mocha": "7.1.2",
