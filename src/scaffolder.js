@@ -1,14 +1,18 @@
 import {resolve} from 'path';
 import {promises} from 'fs';
+import {fileTypes, writeConfigFile} from '@form8ion/core';
+
 import mkdir from '../thirdparty-wrappers/make-dir';
 
 export async function scaffold({projectRoot, testDirectory, testBaseUrl}) {
   const [createdTestDirectory] = await Promise.all([
     mkdir(testDirectory),
-    promises.writeFile(
-      `${projectRoot}/cypress.json`,
-      JSON.stringify({integrationFolder: testDirectory, baseUrl: testBaseUrl})
-    )
+    writeConfigFile({
+      path: projectRoot,
+      name: 'cypress',
+      format: fileTypes.JSON,
+      config: {integrationFolder: testDirectory, baseUrl: testBaseUrl}
+    })
   ]);
 
   await promises.copyFile(
@@ -24,6 +28,6 @@ export async function scaffold({projectRoot, testDirectory, testBaseUrl}) {
       'cypress:open': 'cypress open'
     },
     vcsIgnore: {files: [], directories: ['/cypress/fixtures/', '/cypress/videos/', '/cypress/screenshots']},
-    eslintConfigs: [{name: 'cypress', files: `${testDirectory}**/*-spec.js`}]
+    eslint: {configs: [{name: 'cypress', files: `${testDirectory}**/*-spec.js`}]}
   };
 }

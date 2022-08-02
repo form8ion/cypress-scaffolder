@@ -57,6 +57,7 @@
     "sinon": "14.0.0"
   },
   "dependencies": {
+    "@form8ion/core": "^2.0.0",
     "make-dir": "^3.0.0"
   }
 }

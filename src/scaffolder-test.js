@@ -1,5 +1,7 @@
 import {resolve} from 'path';
 import {promises} from 'fs';
+import * as core from '@form8ion/core';
+
 import {assert} from 'chai';
 import sinon from 'sinon';
 import any from '@travi/any';
@@ -13,9 +15,9 @@ suite('scaffolder', () => {
   setup(() => {
     sandbox = sinon.createSandbox();
 
-    sandbox.stub(promises, 'writeFile');
     sandbox.stub(promises, 'copyFile');
     sandbox.stub(mkdir, 'default');
+    sandbox.stub(core, 'writeConfigFile');
   });
 
   teardown(() => sandbox.restore());
@@ -24,15 +26,18 @@ suite('scaffolder', () => {
     const projectRoot = any.string();
     const testDirectory = any.string();
     const testBaseUrl = any.url();
-    promises.writeFile.resolves();
     mkdir.default.withArgs(testDirectory).resolves(pathToCreatedDirectory);
 
     const results = await scaffold({projectRoot, testDirectory, testBaseUrl});
 
     assert.calledWith(
-      promises.writeFile,
-      `${projectRoot}/cypress.json`,
-      JSON.stringify({integrationFolder: testDirectory, baseUrl: testBaseUrl})
+      core.writeConfigFile,
+      {
+        name: 'cypress',
+        path: projectRoot,
+        format: core.fileTypes.JSON,
+        config: {integrationFolder: testDirectory, baseUrl: testBaseUrl}
+      }
     );
     assert.calledWith(
       promises.copyFile,
@@ -52,7 +57,7 @@ suite('scaffolder', () => {
           files: [],
           directories: ['/cypress/fixtures/', '/cypress/videos/', '/cypress/screenshots']
         },
-        eslintConfigs: [{name: 'cypress', files: `${testDirectory}**/*-spec.js`}]
+        eslint: {configs: [{name: 'cypress', files: `${testDirectory}**/*-spec.js`}]}
       }
     );
   });
