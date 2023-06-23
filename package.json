@@ -58,6 +58,6 @@
   },
   "dependencies": {
     "@form8ion/core": "^2.0.0",
-    "make-dir": "^3.0.0"
+    "make-dir": "^4.0.0"
   }
 }
