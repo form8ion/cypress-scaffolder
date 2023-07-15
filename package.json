@@ -18,6 +18,7 @@
   "homepage": "https://npm.im/@form8ion/cypress-scaffolder",
   "author": "Matt Travi <npm@travi.org> (https://matt.travi.org/)",
   "scripts": {
+    "pretest": "run-s build",
     "test": "npm-run-all --print-label --parallel lint:* --parallel test:*",
     "lint:lockfile": "lockfile-lint --path package-lock.json --type npm --validate-https --allowed-hosts npm",
     "lint:js": "eslint . --cache",
