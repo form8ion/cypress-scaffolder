@@ -1,6 +1,6 @@
 import {resolve} from 'path';
 import {promises} from 'fs';
-import * as core from '@form8ion/core';
+import core from '@form8ion/core';
 
 import {assert} from 'chai';
 import sinon from 'sinon';
