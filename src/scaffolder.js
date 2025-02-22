@@ -21,8 +21,7 @@ export async function scaffold({projectRoot, testDirectory, testBaseUrl}) {
   );
 
   return {
-    dependencies: [],
-    devDependencies: ['cypress'],
+    dependencies: {javascript: {development: ['cypress']}},
     scripts: {
       'cypress:run': 'cypress run',
       'cypress:open': 'cypress open'

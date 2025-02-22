@@ -47,8 +47,7 @@ suite('scaffolder', () => {
     assert.deepEqual(
       results,
       {
-        dependencies: [],
-        devDependencies: ['cypress'],
+        dependencies: {javascript: {development: ['cypress']}},
         scripts: {
           'cypress:run': 'cypress run',
           'cypress:open': 'cypress open'
