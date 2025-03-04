@@ -22,7 +22,7 @@ suite('scaffolder', () => {
 
   teardown(() => sandbox.restore());
 
-  test('that spectacle dependencies are defined and config files are created', async () => {
+  test('that cypress dependencies are defined and config files are created', async () => {
     const projectRoot = any.string();
     const testDirectory = any.string();
     const testBaseUrl = any.url();
