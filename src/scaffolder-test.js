@@ -22,7 +22,7 @@ suite('scaffolder', () => {
 
   teardown(() => sandbox.restore());
 
-  test('that spectacle dependencies are defined and config files are created', async () => {
+  test('that cypress dependencies are defined and config files are created', async () => {
     const projectRoot = any.string();
     const testDirectory = any.string();
     const testBaseUrl = any.url();
@@ -47,8 +47,7 @@ suite('scaffolder', () => {
     assert.deepEqual(
       results,
       {
-        dependencies: [],
-        devDependencies: ['cypress'],
+        dependencies: {javascript: {development: ['cypress']}},
         scripts: {
           'cypress:run': 'cypress run',
           'cypress:open': 'cypress open'
