@@ -68,7 +68,7 @@ $ npm test
 
 [npm-link]: https://www.npmjs.com/package/@form8ion/cypress-scaffolder
 
-[npm-badge]: https://img.shields.io/npm/v/@form8ion/cypress-scaffolder.svg
+[npm-badge]: https://img.shields.io/npm/v/@form8ion/cypress-scaffolder?logo=npm
 
 [runkit-link]: https://npm.runkit.com/@form8ion/cypress-scaffolder
 
@@ -76,7 +76,7 @@ $ npm test
 
 [license-link]: LICENSE
 
-[license-badge]: https://img.shields.io/github/license/form8ion/cypress-scaffolder.svg
+[license-badge]: https://img.shields.io/github/license/form8ion/cypress-scaffolder.svg?logo=opensourceinitiative
 
 [commit-convention-link]: https://conventionalcommits.org
 
