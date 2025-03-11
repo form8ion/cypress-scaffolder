@@ -3,7 +3,7 @@
   "description": "opinionated scaffolder for leveraging Cypress for testing a project",
   "license": "MIT",
   "version": "0.0.0-semantically-released",
-  "type": "commonjs",
+  "type": "module",
   "engines": {
     "node": "^18.19.0 || ^20.9.0 || >=22.11.0"
   },
@@ -12,7 +12,7 @@
   "bugs": "https://github.com/form8ion/cypress-scaffolder/issues",
   "homepage": "https://npm.im/@form8ion/cypress-scaffolder",
   "main": "./lib/index.js",
-  "module": "./lib/index.mjs",
+  "exports": "./lib/index.js",
   "sideEffects": false,
   "scripts": {
     "pretest": "run-s build",
